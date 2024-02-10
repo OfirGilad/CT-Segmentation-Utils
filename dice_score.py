@@ -11,6 +11,7 @@ def test_nifti_dice_score(seg_path, seg_file, truth_path, truth_file):
     truth_nib = nib.load(truth_file_path)
     truth_data = np.array(truth_nib.dataobj)
     dice_score = calculate_nifti_dice_score(seg_data, truth_data)
+    print(f'{seg_file} vs {truth_file}: {dice_score}')
     return dice_score
 
 
